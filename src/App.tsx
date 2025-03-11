@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import "./index.css";
 import "./App.css";
 // import AboutUs from "./components/AboutUs";
-// import SignIn from "./components/SignIn";
+import SignIn from "./components/SignIn";
 // import Discovery from "./components/Discovery";
 // import Mail from "./components/Mail";
 // import Notification from "./components/Notification";
@@ -69,8 +69,8 @@ const App: React.FC = () => {
         <main className="flex-1 container mx-auto p-6">
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/about" element={<AboutUs />} />
-            <Route path="/signin" element={<SignIn />} /> */}
+            {/* <Route path="/about" element={<AboutUs />} /> */}
+            <Route path="/signin" element={<SignIn />} />
             {/* <Route path="/discovery" element={<Discovery />} />
             <Route path="/mail" element={<Mail />} />
             <Route path="/notifications" element={<Notification />} />
