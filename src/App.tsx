@@ -3,11 +3,14 @@ import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-do
 import { FiMoon, FiSun, FiInstagram, FiYoutube, FiTwitter, FiFacebook } from "react-icons/fi";
 import "./index.css";
 import "./App.css";
-// import AboutUs from "./components/AboutUs";
 import Home from "./components/Home";
 import AboutUs from "./components/AboutUs";
 import SignIn from "./components/SignIn";
 import Discovery from "./components/Discovery";
+
+// import Mail from "./components/Mail";
+import Notification from "./components/Notification";
+
 import Mail from "./components/Mail";
 // import Notification from "./components/Notification";
 // import Settings from "./components/Settings";
@@ -74,9 +77,15 @@ const App: React.FC = () => {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/discovery" element={<Discovery />} />
+
+            {/* <Route path="/mail" element={<Mail />} /> */}
+            <Route path="/notifications" element={<Notification />} />
+            {/* <Route path="/settings" element={<Settings />} /> */}
+
             <Route path="/mail" element={<Mail />} />
             {/* <Route path="/notifications" element={<Notification />} />
             <Route path="/settings" element={<Settings />} /> */}
+
           </Routes>
         </main>
 
