@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import { FiMoon, FiSun, FiInstagram, FiYoutube, FiTwitter, FiFacebook } from "react-icons/fi";
-import Home from "./components/Home";
 import "./index.css";
 import "./App.css";
-// import AboutUs from "./components/AboutUs";
+import Home from "./components/Home";
+import AboutUs from "./components/AboutUs";
 // import SignIn from "./components/SignIn";
 // import Discovery from "./components/Discovery";
 // import Mail from "./components/Mail";
@@ -69,8 +69,8 @@ const App: React.FC = () => {
         <main className="flex-1 container mx-auto p-6">
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/about" element={<AboutUs />} />
-            <Route path="/signin" element={<SignIn />} /> */}
+            <Route path="/about" element={<AboutUs />} />
+            {/* <Route path="/signin" element={<SignIn />} /> */}
             {/* <Route path="/discovery" element={<Discovery />} />
             <Route path="/mail" element={<Mail />} />
             <Route path="/notifications" element={<Notification />} />
