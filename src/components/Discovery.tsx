@@ -46,7 +46,7 @@ const Discovery: React.FC = () => {
     { name: "Lazuardi", age: 21, image: LazuardiImage, interests: ["Reptile lovers", "Cat Lovers"] },
     { name: "Rivan", age: 21, image: RivanImage, interests: ["Reptile lovers", "Gecko lovers"] },
     { name: "Najwa", age: 21, image: NajwaImage, interests: ["Reptile lovers", "Gecko lovers"] },
-    { name: "Elizabeth", age: 21, image: ElizabethImage, interests: ["Reptile lovers", "Gecko lovers"] },
+    { name: "Ellizabeth", age: 21, image: ElizabethImage, interests: ["Reptile lovers", "Gecko lovers"] },
   ];
 
   return (
