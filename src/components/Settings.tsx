@@ -1,15 +1,17 @@
-import { FaBell, FaEnvelope, FaCog, FaSearch } from "react-icons/fa";
+import { FiSearch, FiBell, FiSettings } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 const Settings = () => {
+  const navigate = useNavigate();
 
   return (
     <div className={`min-h-screen p-6 transition-all`}>
       {/* Navbar Icons */}
       <div className="flex justify-end space-x-4 text-xl">
-        <FaSearch className="cursor-pointer" />
-        <FaBell className="cursor-pointer" />
-        <FaEnvelope className="cursor-pointer" />
-        <FaCog className="cursor-pointer text-yellow-500" />
+        <button className="text-xl p-2 hover:text-gray-300" aria-label="Search"><FiSearch /></button>
+        <button className="text-xl p-2 hover:text-gray-300" onClick={() => navigate('/notifications')} aria-label="Notifications"><FiBell /></button>
+        <button className="text-xl p-2 hover:text-gray-300" onClick={() => navigate('/mail')} aria-label="Mail"><FiMail /></button>
+        <button className="text-xl p-2 hover:text-gray-300" onClick={() => navigate("/settings")} aria-label="Settings"><FiSettings /></button>
       </div>
 
       {/* Header */}
