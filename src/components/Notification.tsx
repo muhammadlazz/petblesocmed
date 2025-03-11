@@ -1,5 +1,5 @@
 import React from "react";
-import { FiSearch, FiBell, FiMail, FiMoon, FiSettings } from "react-icons/fi";
+import { FiSearch, FiBell, FiMail, FiSettings } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 interface Notification {
@@ -32,7 +32,6 @@ const Notification: React.FC = () => {
         <button className="text-xl p-2 hover:text-gray-300" aria-label="Search"><FiSearch /></button>
         <button className="text-xl p-2 hover:text-gray-300" onClick={() => navigate('/notifications')} aria-label="Notifications"><FiBell /></button>
         <button className="text-xl p-2 hover:text-gray-300" onClick={() => navigate('/mail')} aria-label="Mail"><FiMail /></button>
-        <button className="text-xl p-2 hover:text-gray-300" aria-label="Dark Mode"><FiMoon /></button>
         <button className="text-xl p-2 hover:text-gray-300" onClick={() => navigate("/settings")} aria-label="Settings"><FiSettings /></button>
       </div>
 

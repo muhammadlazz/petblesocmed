@@ -1,4 +1,4 @@
-import { FiSearch, FiBell, FiSettings } from "react-icons/fi";
+import { FiSearch, FiBell, FiMail, FiSettings } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 const Settings = () => {
