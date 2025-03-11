@@ -1,53 +1,39 @@
-import { useContext } from "react";
-import { FaBell, FaEnvelope, FaMoon, FaSun, FaCog, FaSearch } from "react-icons/fa";
-import "./Settings.css"; // Pastikan file CSS ini sudah ada
-import { ThemeContext } from "./ThemeContext";
+import { FaBell, FaEnvelope, FaCog, FaSearch } from "react-icons/fa";
 
-const Settings: React.FC = () => {
-  const themeContext = useContext(ThemeContext);
-
-  // Pastikan themeContext tidak undefined sebelum digunakan
-  if (!themeContext) {
-    throw new Error("ThemeContext must be used within a ThemeProvider");
-  }
-
-  const { theme, toggleTheme } = themeContext;
+const Settings = () => {
 
   return (
-    <div className="settings-container">
-      {/* Navbar Icon */}
-      <div className="navbar-icons">
-        <FaSearch className="icon" />
-        <FaBell className="icon" />
-        <FaEnvelope className="icon" />
-        <button onClick={toggleTheme} className="theme-toggle">
-          {theme === "dark" ? <FaSun /> : <FaMoon />}
-        </button>
-        <FaCog className="icon active" />
+    <div className={`min-h-screen p-6 transition-all`}>
+      {/* Navbar Icons */}
+      <div className="flex justify-end space-x-4 text-xl">
+        <FaSearch className="cursor-pointer" />
+        <FaBell className="cursor-pointer" />
+        <FaEnvelope className="cursor-pointer" />
+        <FaCog className="cursor-pointer text-yellow-500" />
       </div>
 
       {/* Header */}
-      <h1 className="logo">Petble</h1>
+      <h1 className="text-3xl font-bold mt-4">Petble</h1>
 
       {/* Profile Section */}
-      <div className="settings-section">
-        <label>Profile</label>
-        <div className="profile-card">
-          <div className="profile-pic"></div>
-          <span className="username">Jua</span>
-          <button className="change-profile-btn">Change Profile</button>
+      <div className="mt-6 bg-white p-4 rounded-lg shadow-md dark:bg-gray-700">
+        <label className="block text-lg font-semibold mb-2">Profile</label>
+        <div className="flex items-center space-x-4">
+          <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
+          <span className="text-xl font-semibold text-red-500">Jua</span>
+          <button className="ml-auto bg-yellow-500 text-black font-semibold px-4 py-2 rounded-lg">Change Profile</button>
         </div>
       </div>
 
       {/* Form Sections */}
-      <div className="settings-section">
-        <label>Bio</label>
-        <textarea className="input-box" placeholder="Enter your bio..."></textarea>
+      <div className="mt-6">
+        <label className="block text-lg font-semibold mb-2">Bio</label>
+        <textarea className="w-full p-2 border rounded-md bg-white text-black dark:bg-gray-700 dark:text-white" placeholder="Enter your bio..."></textarea>
       </div>
 
-      <div className="settings-section">
-        <label>Gender</label>
-        <select className="input-box">
+      <div className="mt-4">
+        <label className="block text-lg font-semibold mb-2">Gender</label>
+        <select className="w-full p-2 border rounded-md bg-white text-black dark:bg-gray-700 dark:text-white">
           <option value="">Select Gender</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
@@ -55,9 +41,9 @@ const Settings: React.FC = () => {
         </select>
       </div>
 
-      <div className="settings-section">
-        <label>Interest</label>
-        <select className="input-box">
+      <div className="mt-4">
+        <label className="block text-lg font-semibold mb-2">Interest</label>
+        <select className="w-full p-2 border rounded-md bg-white text-black dark:bg-gray-700 dark:text-white">
           <option value="">Select Interest</option>
           <option value="cats">Cats</option>
           <option value="dogs">Dogs</option>

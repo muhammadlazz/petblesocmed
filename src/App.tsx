@@ -7,13 +7,9 @@ import Home from "./components/Home";
 import AboutUs from "./components/AboutUs";
 import SignIn from "./components/SignIn";
 import Discovery from "./components/Discovery";
-
-// import Mail from "./components/Mail";
 import Notification from "./components/Notification";
-
 import Mail from "./components/Mail";
-// import Notification from "./components/Notification";
-// import Settings from "./components/Settings";
+import Settings from "./components/Settings";
 
 const App: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<boolean>(false);
@@ -73,19 +69,13 @@ const App: React.FC = () => {
         <main className="flex-1 container mx-auto p-6">
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/about" element={<AboutUs />} /> */}
             <Route path="/about" element={<AboutUs />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/discovery" element={<Discovery />} />
-
-            {/* <Route path="/mail" element={<Mail />} /> */}
             <Route path="/notifications" element={<Notification />} />
-            {/* <Route path="/settings" element={<Settings />} /> */}
-
             <Route path="/mail" element={<Mail />} />
-            {/* <Route path="/notifications" element={<Notification />} />
-            <Route path="/settings" element={<Settings />} /> */}
-
+            <Route path="/notifications" element={<Notification />} />
+            <Route path="/settings" element={<Settings />} />
           </Routes>
         </main>
 
