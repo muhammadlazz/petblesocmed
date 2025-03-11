@@ -1,5 +1,6 @@
 import React from "react";
 import { FiSearch, FiBell, FiMail, FiMoon, FiSettings } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 type Conversation = {
   id: number;
@@ -17,27 +18,19 @@ const conversations: Conversation[] = [
 ];
 
 const Mail: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full max-w-3xl mx-auto flex flex-col h-screen bg-gray-100">
       {/* Header */}
       <header className="flex justify-between items-center p-4 bg-teal-700 text-white shadow-md">
-        <div className="flex gap-2">
-          <button className="p-2 rounded-full hover:bg-teal-600">
-            <FiSearch size={20} />
-          </button>
-          <button className="p-2 rounded-full hover:bg-teal-600">
-            <FiBell size={20} />
-          </button>
-          <button className="p-2 rounded-full bg-teal-600">
-            <FiMail size={20} />
-          </button>
-          <button className="p-2 rounded-full hover:bg-teal-600">
-            <FiMoon size={20} />
-          </button>
-          <button className="p-2 rounded-full hover:bg-teal-600">
-            <FiSettings size={20} />
-          </button>
-        </div>
+      <div className="flex justify-end gap-4 mb-6">
+        <button className="text-xl p-2 hover:text-gray-300" aria-label="Search"><FiSearch /></button>
+        <button className="text-xl p-2 hover:text-gray-300" onClick={() => navigate('/notifications')} aria-label="Notifications"><FiBell /></button>
+        <button className="text-xl p-2 hover:text-gray-300" onClick={() => navigate('/mail')} aria-label="Mail"><FiMail /></button>
+        <button className="text-xl p-2 hover:text-gray-300" aria-label="Dark Mode"><FiMoon /></button>
+        <button className="text-xl p-2 hover:text-gray-300" onClick={() => navigate("/settings")} aria-label="Settings"><FiSettings /></button>
+      </div>
       </header>
 
       {/* Conversation List */}
