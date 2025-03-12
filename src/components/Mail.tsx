@@ -11,7 +11,7 @@ type Conversation = {
 };
 
 const conversations: Conversation[] = [
-  { id: 1, name: "Firdaus", lastMessage: "ayo kita ketemuan", avatar: "/images/avatar-placeholder.jpg" },
+  { id: 1, name: "Firdaus", lastMessage: "Hai, apa kabar", avatar: "/images/avatar-placeholder.jpg" },
   { id: 2, name: "Najwa", lastMessage: "ᗪOᗰIՏIᒪI ᗰᗩᑎᗩ", avatar: "/images/avatar-placeholder.jpg" },
   { id: 3, name: "Firdaus", lastMessage: "aku punya 5 gecko", avatar: "/images/avatar-placeholder.jpg" },
   { id: 4, name: "Firdaus", lastMessage: "salah", avatar: "/images/avatar-placeholder.jpg" },

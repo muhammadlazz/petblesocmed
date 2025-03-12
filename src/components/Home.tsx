@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <div className="max-w-full mx-auto font-sans text-gray-800">
-      <section className="flex flex-col py-16 px-8 bg-gray-50">
+      <section className="flex flex-col py-16 px-8" style={{ backgroundColor: "#ABD#ff1C6" }}>
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-5xl font-extrabold text-teal-800 mb-6">
             Hi, Peepals!

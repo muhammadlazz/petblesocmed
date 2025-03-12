@@ -36,7 +36,9 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <div className="flex flex-col min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+      <div className="flex flex-col min-h-screen text-gray-900 dark:text-white"
+     style={{ backgroundColor: "#ABD1C6" }}>
+
         {/* HEADER */}
         <header className="bg-green-900 text-white py-4">
           <div className="container mx-auto flex justify-between items-center px-4">

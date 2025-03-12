@@ -45,9 +45,12 @@ const Chat = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-gray-100">
-      {/* Header */}
-      <div className="p-4 bg-white shadow-md text-lg font-semibold text-black">
+    // <div className="flex flex-col h-screen bg-gray-100">
+    //   {/* Header */}
+    //   <div className="p-4 bg-white shadow-md text-lg font-semibold text-black">
+    <div className="w-full max-w-3xl mx-auto flex flex-col h-screen bg-gray-100">
+    {/* Header */}
+    <div className="flex justify-between items-center p-4 bg-teal-700 text-white shadow-md">
         {conversationId && conversationNames[conversationId]
           ? conversationNames[conversationId]
           : "Chat"}
