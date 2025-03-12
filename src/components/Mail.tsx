@@ -15,7 +15,7 @@ const conversations: Conversation[] = [
   { id: 2, name: "Najwa", lastMessage: "ᗪOᗰIՏIᒪI ᗰᗩᑎᗩ", avatar: "/images/avatar-placeholder.jpg" },
   { id: 3, name: "Firdaus", lastMessage: "aku punya 5 gecko", avatar: "/images/avatar-placeholder.jpg" },
   { id: 4, name: "Firdaus", lastMessage: "salah", avatar: "/images/avatar-placeholder.jpg" },
-  { id: 5, name: "Firdaus", lastMessage: "salah", avatar: "/images/avatar-placeholder.jpg" },
+  { id: 5, name: "Lazuardi", lastMessage: "Kucing dipakein costum captain america gimana?", avatar: "/images/avatar-placeholder.jpg" },
 ];
 
 const Mail: React.FC = () => {
