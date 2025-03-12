@@ -6,7 +6,7 @@ interface Message {
   isSender: boolean;
 }
 
-const conversations = {
+const conversations: Record<number, Message[]> = {
   1: [
     { text: "Halo!", isSender: false },
     { text: "Hai! Apa kabar?", isSender: true },
@@ -29,12 +29,10 @@ const conversationNames: Record<number, string> = {
 };
 
 const Chat = () => {
-  const { id } = useParams(); // ✅ Ambil ID dari URL
+  const { id } = useParams<{ id: string }>(); // Pastikan id bertipe string
   const conversationId = id ? parseInt(id) : null;
-  const initialMessages =
-    conversationId && conversations[conversationId]
-      ? conversations[conversationId]
-      : [];
+  
+  const initialMessages: Message[] = conversationId && conversations[conversationId] ? conversations[conversationId] : [];
 
   const [messages, setMessages] = useState<Message[]>(initialMessages);
   const [input, setInput] = useState("");
