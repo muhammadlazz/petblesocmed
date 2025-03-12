@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FiSearch, FiBell, FiMail, FiSettings } from "react-icons/fi";
+import { FiSearch, FiBell, FiMail, FiSettings, FiHome } from "react-icons/fi";
 import LazuardiImage from "./Lazuardi.jpg";
 import RivanImage from "./rivan.jpg";
 import NajwaImage from "./najwa.jpg";
@@ -57,6 +57,7 @@ const Discovery: React.FC = () => {
           <button onClick={() => navigate("/notifications")} className="hover:text-orange-500"><FiBell /></button>
           <button onClick={() => navigate("/mail")} className="hover:text-orange-500"><FiMail /></button>
           <button onClick={() => navigate("/settings")} className="hover:text-orange-500"><FiSettings /></button>
+          <button className="text-xl p-2 hover:text-gray-300" onClick={() => navigate("/discovery")} aria-label="Home"><FiHome /></button>
         </div>
       </header>
       <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

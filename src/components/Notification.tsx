@@ -1,5 +1,5 @@
 import React from "react";
-import { FiSearch, FiBell, FiMail, FiMoon, FiSettings } from "react-icons/fi";
+import { FiSearch, FiBell, FiMail, FiSettings, FiHome } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 interface Notification {
@@ -10,10 +10,10 @@ interface Notification {
 
 const notifications: Notification[] = [
   { id: 1, name: "Jua", date: "Today" },
-  { id: 2, name: "Jua", date: "Today" },
-  { id: 3, name: "Jua", date: "Yesterday" },
-  { id: 4, name: "Jua", date: "Yesterday" },
-  { id: 5, name: "Jua", date: "Yesterday" },
+  { id: 2, name: "Lazuardi", date: "Today" },
+  { id: 3, name: "Rivan", date: "Yesterday" },
+  { id: 4, name: "Ellizabeth", date: "Yesterday" },
+  { id: 5, name: "Firdaus", date: "Yesterday" },
 ];
 
 const groupedNotifications: Record<string, Notification[]> = notifications.reduce((acc, notif) => {
@@ -32,8 +32,9 @@ const Notification: React.FC = () => {
         <button className="text-xl p-2 hover:text-gray-300" aria-label="Search"><FiSearch /></button>
         <button className="text-xl p-2 hover:text-gray-300" onClick={() => navigate('/notifications')} aria-label="Notifications"><FiBell /></button>
         <button className="text-xl p-2 hover:text-gray-300" onClick={() => navigate('/mail')} aria-label="Mail"><FiMail /></button>
-        <button className="text-xl p-2 hover:text-gray-300" aria-label="Dark Mode"><FiMoon /></button>
+        {/* <button className="text-xl p-2 hover:text-gray-300" aria-label="Dark Mode"><FiMoon /></button> */}
         <button className="text-xl p-2 hover:text-gray-300" onClick={() => navigate("/settings")} aria-label="Settings"><FiSettings /></button>
+        <button className="text-xl p-2 hover:text-gray-300" onClick={() => navigate("/discovery")} aria-label="Home"><FiHome /></button>
       </div>
 
       {/* Notifikasi */}

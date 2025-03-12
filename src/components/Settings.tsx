@@ -12,8 +12,8 @@ const Settings = () => {
         <FaCog className="cursor-pointer text-yellow-500" />
       </div>
 
-      {/* Header */}
-      <h1 className="text-3xl font-bold mt-4">Petble</h1>
+      {/* Header
+      <h1 className="text-3xl font-bold mt-4">Petble</h1> */}
 
       {/* Profile Section */}
       <div className="mt-6 bg-white p-4 rounded-lg shadow-md dark:bg-gray-700">
