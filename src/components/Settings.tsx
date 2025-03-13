@@ -45,12 +45,14 @@ const Settings = () => {
 
       <div className="mt-4">
         <label className="block text-lg font-semibold mb-2">Interest</label>
-        <select className="w-full p-2 border rounded-md bg-white text-black dark:bg-gray-700 dark:text-white">
+        {/* <select className="w-full p-2 border rounded-md bg-white text-black dark:bg-gray-700 dark:text-white">
           <option value="">Select Interest</option>
           <option value="cats">Cats</option>
           <option value="dogs">Dogs</option>
           <option value="both">Both</option>
-        </select>
+        </select> */}
+        <textarea className="w-full p-2 border rounded-md bg-white text-black dark:bg-gray-700 dark:text-white" placeholder="Enter your interest..."></textarea>
+        <button className="ml-auto bg-yellow-500 text-black font-semibold px-4 py-2 rounded-lg">Submit</button>
       </div>
     </div>
   );
