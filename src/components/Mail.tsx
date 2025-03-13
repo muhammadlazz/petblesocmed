@@ -1,6 +1,11 @@
 import React from "react";
 import { FiSearch, FiBell, FiMail, FiSettings, FiHome } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import prof1 from "./prof1.jpg";
+import prof2 from "./prof2.jpg";
+import prof3 from "./prof3.jpg";
+import prof4 from "./prof4.jpg";
+import prof5 from "./prof5.jpg";
 
 
 type Conversation = {
@@ -11,11 +16,11 @@ type Conversation = {
 };
 
 const conversations: Conversation[] = [
-  { id: 1, name: "Firdaus", lastMessage: "ayo kita ketemuan", avatar: "/images/avatar-placeholder.jpg" },
-  { id: 2, name: "Najwa", lastMessage: "ᗪOᗰIՏIᒪI ᗰᗩᑎᗩ", avatar: "/images/avatar-placeholder.jpg" },
-  { id: 3, name: "Firdaus", lastMessage: "aku punya 5 gecko", avatar: "/images/avatar-placeholder.jpg" },
-  { id: 4, name: "Patrycia", lastMessage: "salah", avatar: "/images/avatar-placeholder.jpg" },
-  { id: 5, name: "Lazuardi", lastMessage: "Kucing dipakein costum captain america gimana?", avatar: "/images/avatar-placeholder.jpg" },
+  { id: 1, name: "Firdaus", lastMessage: "ayo kita ketemuan", avatar: prof3 },
+  { id: 2, name: "Najwa", lastMessage: "ᗪOᗰIՏIᒪI ᗰᗩᑎᗩ", avatar: prof1 },
+  { id: 3, name: "Firdaus", lastMessage: "aku punya 5 gecko", avatar: prof2 },
+  { id: 4, name: "Patrycia", lastMessage: "haii!", avatar: prof4 },
+  { id: 5, name: "Lazuardi", lastMessage: "Kucing dipakein costum captain america gimana?", avatar: prof5 },
 ];
 
 const Mail: React.FC = () => {
@@ -55,11 +60,16 @@ const Mail: React.FC = () => {
               onClick={() => navigate(`/chat/${conversation.id}`)} // ✅ Perbaikan di sini
             >
               <div className="w-12 h-12 mr-4">
-                <img
+                //<img
                   src={conversation.avatar}
                   alt={conversation.name}
-                  className="w-full h-full rounded-full bg-gray-300"
+                  className="w-full h-full rounded full bg-gray-300"
                 />
+              ) : (
+                  <span className="text-white font-bold text-lg">
+                  {conversation.name.charAt(0).toUpperCase()}
+                  </span>
+
               </div>
               <div className="flex flex-col">
                 <span className="font-semibold text-red-500">{conversation.name}</span>
