@@ -1,7 +1,11 @@
 import React from "react";
 import { FiSearch, FiBell, FiMail, FiSettings, FiHome } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-
+import prof1 from "./prof1.jpg";
+import prof2 from "./prof2.jpg";
+import prof3 from "./prof3.jpg";
+import prof4 from "./prof4.jpg";
+import prof5 from "./prof5.jpg";
 
 type Conversation = {
   id: number;
@@ -11,11 +15,17 @@ type Conversation = {
 };
 
 const conversations: Conversation[] = [
+
   { id: 1, name: "Firdaus", lastMessage: "Hai, apa kabar", avatar: "/images/avatar-placeholder.jpg" },
   { id: 2, name: "Najwa", lastMessage: "ᗪOᗰIՏIᒪI ᗰᗩᑎᗩ", avatar: "/images/avatar-placeholder.jpg" },
   { id: 3, name: "Firdaus", lastMessage: "aku punya 5 gecko", avatar: "/images/avatar-placeholder.jpg" },
   { id: 4, name: "Firdaus", lastMessage: "salah", avatar: "/images/avatar-placeholder.jpg" },
   { id: 5, name: "Firdaus", lastMessage: "salah", avatar: "/images/avatar-placeholder.jpg" },
+  { id: 1, name: "Firdaus", lastMessage: "ayo kita ketemuan", avatar: prof3 },
+  { id: 2, name: "Jua", lastMessage: "ᗪOᗰIՏIᒪI ᗰᗩᑎᗩ", avatar: prof1 },
+  { id: 3, name: "Sarah", lastMessage: "aku punya 5 gecko", avatar: prof2 },
+  { id: 4, name: "Patrycia", lastMessage: "haii!", avatar: prof4 },
+  { id: 5, name: "Dira", lastMessage: "Kucing dipakein costum captain america gimana?", avatar: prof5 },
 ];
 
 const Mail: React.FC = () => {
@@ -52,7 +62,7 @@ const Mail: React.FC = () => {
               key={conversation.id}
               className="flex items-center p-4 border-b last:border-b-0 cursor-pointer hover:bg-gray-100"
               aria-label="Conversation"
-              onClick={() => navigate(`/chat/${conversation.id}`)} // ✅ Perbaikan di sini
+              onClick={() => navigate(`/chat/${conversation.id}`)}
             >
               <div className="w-12 h-12 mr-4">
                 <img

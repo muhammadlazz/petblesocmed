@@ -10,7 +10,7 @@ import Discovery from "./components/Discovery";
 import Notification from "./components/Notification";
 import Mail from "./components/Mail";
 import Settings from "./components/Settings";
-import Chat from "./components/chat";
+import Chat from "./components/Chat";
 
 
 const App: React.FC = () => {
