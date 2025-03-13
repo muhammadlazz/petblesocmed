@@ -16,10 +16,10 @@ type Conversation = {
 
 const conversations: Conversation[] = [
   { id: 1, name: "Firdaus", lastMessage: "ayo kita ketemuan", avatar: prof3 },
-  { id: 2, name: "Najwa", lastMessage: "ᗪOᗰIՏIᒪI ᗰᗩᑎᗩ", avatar: prof1 },
+  { id: 2, name: "Jua", lastMessage: "ᗪOᗰIՏIᒪI ᗰᗩᑎᗩ", avatar: prof1 },
   { id: 3, name: "Sarah", lastMessage: "aku punya 5 gecko", avatar: prof2 },
   { id: 4, name: "Patrycia", lastMessage: "haii!", avatar: prof4 },
-  { id: 5, name: "Lazuardi", lastMessage: "Kucing dipakein costum captain america gimana?", avatar: prof5 },
+  { id: 5, name: "Dira", lastMessage: "Kucing dipakein costum captain america gimana?", avatar: prof5 },
 ];
 
 const Mail: React.FC = () => {
