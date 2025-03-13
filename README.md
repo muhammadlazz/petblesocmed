@@ -1,4 +1,8 @@
-# React + TypeScript + Vite
+# Kelompok 4
+
+Figma : https://www.figma.com/design/p6VUKRVImPzXP3OrRP8Qb6/Figma-Petble?node-id=0-1&p=f
+
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
