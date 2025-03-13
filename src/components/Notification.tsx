@@ -1,19 +1,25 @@
 import React from "react";
 import { FiSearch, FiBell, FiMail, FiSettings, FiHome } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import RivanImage from "../rivan.jpg";
+import LazuardiImage from "../Lazuardi.jpg";
+import ElizabethImage from "../elizabeth.jpg";
+import JuaImage from "../prof1.jpg";
+import NajwaImage from "./najwa.jpg";
 
 interface Notification {
   id: number;
   name: string;
   date: string;
+  avatar: string;
 }
 
 const notifications: Notification[] = [
-  { id: 1, name: "Jua", date: "Today" },
-  { id: 2, name: "Lazuardi", date: "Today" },
-  { id: 3, name: "Rivan", date: "Yesterday" },
-  { id: 4, name: "Ellizabeth", date: "Yesterday" },
-  { id: 5, name: "Firdaus", date: "Yesterday" },
+  { id: 1, name: "Jua", avatar: JuaImage, date: "Today" },
+  { id: 2, name: "Lazuardi", avatar: LazuardiImage, date: "Today" },
+  { id: 3, name: "Rivan", avatar: RivanImage, date: "Yesterday" },
+  { id: 4, name: "Ellizabeth", avatar: ElizabethImage, date: "Yesterday" },
+  { id: 5, name: "Najwa", avatar: NajwaImage, date: "Yesterday" },
 ];
 
 const groupedNotifications: Record<string, Notification[]> = notifications.reduce((acc, notif) => {
@@ -44,7 +50,12 @@ const Notification: React.FC = () => {
           <div className="bg-white rounded-lg p-4 text-gray-900">
             {notifs.map((notif) => (
               <div key={notif.id} className="flex items-center gap-4 py-3 border-b last:border-b-0">
-                <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
+                {/* Avatar */}
+                <img
+                  src={notif.avatar}
+                  alt={`${notif.name}'s avatar`}
+                  className="w-10 h-10 bg-gray-300 rounded-full object-cover"
+                  ></img>
                 <p className="flex-1">
                   <span className="font-semibold">{notif.name}</span> wants to add you as a friend
                 </p>
