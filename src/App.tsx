@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import { FiMoon, FiSun, FiInstagram, FiYoutube, FiTwitter, FiFacebook } from "react-icons/fi";
+import { getBackendMessage } from "./api";
 import "./index.css";
 import "./App.css";
 import Home from "./components/Home";
@@ -12,10 +13,10 @@ import Mail from "./components/Mail";
 import Settings from "./components/Settings";
 import Chat from "./components/Chat";
 
-
 const App: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<boolean>(false);
   const [theme, setTheme] = useState<string>(localStorage.getItem("theme") || "light");
+  const [message, setMessage] = useState<string>("");
 
   useEffect(() => {
     if (theme === "dark") {
@@ -25,6 +26,12 @@ const App: React.FC = () => {
     }
     localStorage.setItem("theme", theme);
   }, [theme]);
+
+  useEffect(() => {
+    getBackendMessage().then((data) => {
+      if (data) setMessage(data);
+    });
+  }, []);
 
   const toggleMenu = (): void => {
     setActiveMenu(!activeMenu);
@@ -36,30 +43,21 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <div className="flex flex-col min-h-screen text-gray-900 dark:text-white"
-     style={{ backgroundColor: "#ABD1C6" }}>
-
+      <div className="flex flex-col min-h-screen text-gray-900 dark:text-white" style={{ backgroundColor: "#ABD1C6" }}>
+        
         {/* HEADER */}
         <header className="bg-green-900 text-white py-4">
           <div className="container mx-auto flex justify-between items-center px-4">
-            <NavLink to="/" className="text-3xl font-bold">
-              Petble
-            </NavLink>
+            <NavLink to="/" className="text-3xl font-bold">Petble</NavLink>
 
             <button onClick={toggleMenu} className="md:hidden text-2xl" aria-label="Toggle Menu">
               ☰
             </button>
 
             <nav className={`${activeMenu ? "block" : "hidden"} md:flex gap-6`}>
-              <NavLink to="/" className="hover:text-gray-300">
-                Home
-              </NavLink>
-              <NavLink to="/about" className="hover:text-gray-300">
-                About Us
-              </NavLink>
-              <NavLink to="/signin" className="hover:text-gray-300">
-                Sign In
-              </NavLink>
+              <NavLink to="/" className="hover:text-gray-300">Home</NavLink>
+              <NavLink to="/about" className="hover:text-gray-300">About Us</NavLink>
+              <NavLink to="/signin" className="hover:text-gray-300">Sign In</NavLink>
             </nav>
 
             {/* Toggle Mode */}
@@ -71,6 +69,9 @@ const App: React.FC = () => {
 
         {/* MAIN CONTENT */}
         <main className="flex-1 container mx-auto p-6">
+          <h1 className="text-center text-2xl font-bold mb-4">Message from Backend</h1>
+          <p className="text-center text-lg">{message}</p>
+          
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
@@ -78,9 +79,8 @@ const App: React.FC = () => {
             <Route path="/discovery" element={<Discovery />} />
             <Route path="/notifications" element={<Notification />} />
             <Route path="/mail" element={<Mail />} />
-            <Route path="/notifications" element={<Notification />} />
             <Route path="/settings" element={<Settings />} />
-            <Route path="/chat/:id" element={< Chat />} />
+            <Route path="/chat/:id" element={<Chat />} />
           </Routes>
         </main>
 
